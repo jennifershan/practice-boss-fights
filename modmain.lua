@@ -20,8 +20,8 @@ AddSimPostInit(function()
 			local screen = TheFrontEnd:GetActiveScreen()
 			if not screen or not screen.name then return true end
 			-- If the hud exists, open the UI
-			if screen.name:find("HUD") and _g.ThePlayer and _g.ThePlayer.components.playercontroller:IsEnabled()then
-                -- We want to pass in the (clientside) player entity
+			if screen.name:find("HUD") and _g.ThePlayer and _g.ThePlayer.components.playercontroller:IsEnabled() then
+				-- We want to pass in the (clientside) player entity
 				TheFrontEnd:PushScreen(require("menu")(_g.ThePlayer))
 				return true
 			else
