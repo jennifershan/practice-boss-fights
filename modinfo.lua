@@ -1,6 +1,6 @@
 -- Description
 name = "practice-boss-fights"
-description = "Menu with options for practicing boss fights best used in solo worlds."
+description = "Menu with options for practicing boss fights."
 author = ""
 version = "1.0"
 forumthread = ""
@@ -42,17 +42,6 @@ configuration_options =
 		},
         default = 1,
 	},
-	-- Antlion
-	{
-		name = "start_al",
-		label = "Antlion",
-		hover = "Set whether you start with: desert goggles.",
-		options = {
-			{description = "False", data = 0, hover = "Disabled"},
-			{description = "True", data = 1, hover = "Enabled (default)"},
-		},
-		default = 1,
-	},
 	-- Crab King
 	{
 		name = "start_ck",
@@ -75,6 +64,17 @@ configuration_options =
 		},
 		default = 1,
     },
+	-- Klaus
+	{
+        name = "start_kl",
+		label = "Klaus",
+		hover = "Set whether you start with: deer antler.",
+		options = {
+			{description = "False", data = 0, hover = "Disabled"},
+			{description = "True", data = 1, hover = "Enabled (default)"},
+		},
+		default = 1,
+    },
 	-- Misery Toadstool
     {
         name = "start_mt",
@@ -90,7 +90,7 @@ configuration_options =
 	{
         name = "start_tt",
 		label = "The Twins",
-		hover = "Set whether you start with: Terrarium.",
+		hover = "Set whether you start with: Terrarium, nightmare fuel.",
 		options = {
 			{description = "False", data = 0, hover = "Disabled"},
 			{description = "True", data = 1, hover = "Enabled (default)"},
