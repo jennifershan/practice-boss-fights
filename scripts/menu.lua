@@ -33,9 +33,19 @@ local Menu = Class(Screen, function(self, inst)
   self.bosses:SetPosition(-100, 0)
   self.bosses.cards = {}
 
-  self.ent_cave = self.proot:AddChild(ImageButton("minimap/minimap_data.xml", "cave_open.png"))
-  self.ent_cave:SetPosition(-100, -220)
+  self.ent_cave = self.proot:AddChild(ImageButton("minimap/minimap_data.xml", "cave_closed.png"))
+  self.ent_cave:SetPosition(-163, -220)
+  self.ent_cave:SetScale(0.8, 0.8)
   self.ent_cave:SetOnClick(function()
+    c_remote("c_gonext('cave_entrance')")
+    TheFrontEnd:GetActiveScreen():OnClose()
+  end)
+
+  self.ent_cave_open = self.proot:AddChild(ImageButton("minimap/minimap_data.xml", "cave_open.png"))
+  self.ent_cave_open:SetPosition(-100, -220)
+  self.ent_cave_open:SetOnClick(function()
+    c_remote("c_gonext('cave_entrance_open')")
+    TheFrontEnd:GetActiveScreen():OnClose()
   end)
 
   self.ex_cave = self.proot:AddChild(ImageButton("minimap/minimap_data.xml", "cave_open2.png"))
@@ -55,8 +65,8 @@ local Menu = Class(Screen, function(self, inst)
     boss_card.fill:SetPosition(x, y + 110)
     boss_card.fill:SetScale(.25 * scale, .2 * scale)
 
-    if string.find(bosses[index].name, "\n") then
-      boss_card.title = self.bosses:AddChild(Text(NEWFONT_OUTLINE, 32, bosses[index].name or " "))
+    if index == 1 or index == 2 or index == 7 or index == 14 then
+      boss_card.title = self.bosses:AddChild(Text(NEWFONT_OUTLINE, 32, bosses[index].name:gsub(" ", "\n") or " "))
     else
       boss_card.title = self.bosses:AddChild(Text(NEWFONT_OUTLINE, 39, bosses[index].name or " "))
     end
