@@ -46,9 +46,17 @@ return {
   {name="Crab King", description="",
   iconAtlas="images/inventoryimages2.xml", iconTex="trident.tex",
   activate=function(inst)
-    c_gonext("crabking")
-    local boat = SpawnPrefab("boat")
-    boat.Transform:SetPosition(inst:GetPosition():Get())
+    local ck = TheSim:FindFirstEntityWithTag("crabking_spawner")
+    if ck then
+      local cx, cy, cz = ck.Transform:GetWorldPosition()
+      local r = 5
+      local angle = math.random(360) * math.pi / 180
+      local ptx, ptz = cx + r * math.cos(angle), cz + r * math.sin(angle)
+      local boat = SpawnPrefab("boat")
+      boat.Transform:SetPosition(ptx, cy, ptz)
+      inst.Physics:Teleport(ptx, cy, ptz)
+      inst:SnapCamera() 
+    end
     if GetModConfigData("start_ck", KnownModIndex:GetModActualName("practice-boss-fights")) then
       inst.components.inventory:GiveItem(SpawnPrefab("hermit_pearl"))
     end
@@ -126,7 +134,7 @@ return {
   {name="Nightmare Werepig", description="",
   iconAtlas="images/inventoryimages1.xml", iconTex="horrorfuel.tex",
   activate=function(inst)
-    ExecuteConsoleCommand("c_gonext('daywalker')")
+    c_gonext("daywalker")
   end},
 
   {name="Shadow Pieces", description="",

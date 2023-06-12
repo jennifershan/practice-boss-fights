@@ -2,14 +2,6 @@
 local _g = GLOBAL
 local require = _g.require
 
--- Obtain variables for component overrides
-start_fw = GetModConfigData("start_fw")
-start_al = GetModConfigData("start_al")
-start_ck = GetModConfigData("start_ck")
-start_eot = GetModConfigData("start_eot")
-start_mt = GetModConfigData("start_mt")
-start_tt = GetModConfigData("start_tt")
-
 local craft = require "widgets/redux/craftingmenu_widget"
 local PlayerHud = require "screens/playerhud"
 AddSimPostInit(function()
@@ -55,14 +47,22 @@ AddModRPCHandler(modName, "MenuBosses", function(player, index)
 	end
 end)
 
-local function GiveAllCrafting()
-	for k,v in pairs(_g.AllPlayers) do
-	  v.components.builder:GiveAllRecipes()
+local function GiveCrafting(player)
+	player.components.builder:GiveAllRecipes()
+end
+
+local function RevealMap(player)
+	local w, h = _g.TheWorld.Map:GetSize();
+	for x = -w * 4, w * 4, 35 do
+		for z = -h * 4, h * 4, 35 do
+			player.player_classified.MapExplorer:RevealArea(x, 0, z)
+		end
 	end
 end
 
 AddPrefabPostInit("world", function(inst)
-	inst:ListenForEvent("ms_playerjoined", function(inst, player)
-		GiveAllCrafting()
+	inst:ListenForEvent("ms_playerjoined", function(inst, player) -- Runs every time even if not new player
+		GiveCrafting(player)
+		RevealMap(player)
 	end)
 end)
