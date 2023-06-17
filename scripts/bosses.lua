@@ -117,18 +117,22 @@ return {
   {name="Moose/Goose", description="",
   iconAtlas="images/inventoryimages1.xml", iconTex="goose_feather.tex",
   activate=function(inst)
-    TheWorld:PushEvent("ms_setseason", "spring")
-    c_gonext("moose_nesting_ground")
-    TheWorld.components.moosespawner:DoHardSpawn(inst)
+    if not TheWorld:HasTag("cave") then
+      TheWorld:PushEvent("ms_setseason", "spring")
+      c_gonext("moose_nesting_ground")
+      TheWorld.components.moosespawner:DoHardSpawn(inst)
+    end
   end},
 
   {name="Malbatross", description="",
   iconAtlas="images/inventoryimages2.xml", iconTex="malbatross_feather.tex",
   activate=function(inst)
-    c_gonext("oceanfish_shoalspawner")
-    local boat = SpawnPrefab("boat")
-    boat.Transform:SetPosition(inst:GetPosition():Get())
-    c_summonmalbatross()
+    if not TheWorld:HasTag("cave") then
+      c_gonext("oceanfish_shoalspawner")
+      local boat = SpawnPrefab("boat")
+      boat.Transform:SetPosition(inst:GetPosition():Get())
+      c_summonmalbatross()
+    end
   end},
 
   {name="Nightmare Werepig", description="",
