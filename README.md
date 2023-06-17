@@ -6,6 +6,7 @@ Mod for the Klei multiplayer survival game [Don't Starve Together](https://www.k
 | --- | --- |
 | `P` | Open/close mod menu |
 | `CTRL` + `R` | Load last save |
+| `CTRL` + `S` | Force save |
 
 ## Page view
 First page:

@@ -32,6 +32,12 @@ AddSimPostInit(function()
 				else
 					_g.TheNet:SendRemoteExecute("c_reset()")
 				end
+			elseif key == _g.KEY_S then
+				if _g.TheWorld.ismastersim then
+					_g.c_save()
+				else
+					_g.TheNet:SendRemoteExecute("c_save()")
+				end
 			end
 		end
 	end)
