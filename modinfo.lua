@@ -35,12 +35,11 @@ configuration_options =
 		name = "start_fw",
 		label = "Ancient Fuelweaver",
 		hover = "Set whether you start with: shadow atrium, atrium key, 8 fossil fragments.",
-		default = 0,
 		options = {
 			{description = "False", data = 0, hover = "Disabled"},
 			{description = "True", data = 1, hover = "Enabled (default)"},
 		},
-        default = 1,
+		default = 1,
 	},
 	-- Crab King
 	{
