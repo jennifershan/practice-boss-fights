@@ -10,6 +10,10 @@ forumthread = ""
 
 -- Compatibility
 dst_compatible = true
+dont_starve_compatible = false
+reign_of_giants_compatible = false
+shipwrecked_compatible = false
+hamlet_compatible = false
 
 api_version = 10
 
