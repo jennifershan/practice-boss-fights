@@ -19,7 +19,7 @@ api_version = 10
 
 all_clients_require_mod = false
 
---Config
+-- Config
 server_filter_tags = {name, author}
 
 configuration_options =
