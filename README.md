@@ -1,5 +1,5 @@
 # practice-boss-fights
-Mod for the Klei multiplayer survival game [Don't Starve Together](https://www.klei.com/games/dont-starve-together) that allows server host to use menu UI to practice boss fights (created mainly for my personal use to avoid manually typing out console commands). Free crafting and map revealing is enabled for all players.
+Mod for the Klei multiplayer survival game [Don't Starve Together](https://www.klei.com/games/dont-starve-together) that allows server host to use menu to practice boss fights with free crafting and map revealing enabled for all players (created mainly to avoid manually typing out console commands so customization is limited).
 
 ## Mod behavior
 | Keybind | Actions |
@@ -9,12 +9,9 @@ Mod for the Klei multiplayer survival game [Don't Starve Together](https://www.k
 | `CTRL` + `S` | Force save |
 
 ## Page view
-First page:
-![](https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.15.08%20AM.png)
-Second page:
-![](https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.14.59%20AM.png)
-Third page:
-![](https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.15.15%20AM.png)
+<img src="https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.15.08%20AM.png" width="550"/> 
+<img src="https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.14.59%20AM.png" width="550"/> 
+<img src="https://github.com/jennifershan/practice-boss-fights/blob/main/Screenshot%202023-06-10%20at%205.15.15%20AM.png" width="550"/> 
 
 - Cave buttons teleport host to the next closest corresponding entrance or exit.
 - Arrow buttons navigate between pages.
